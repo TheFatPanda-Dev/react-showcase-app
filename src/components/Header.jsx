@@ -9,12 +9,12 @@ function Header() {
 						alt="DevPups"
 						className="h-16 transition group-hover:scale-105 group-hover:-rotate-6 md:h-20 rounded-full shadow-lg"
 					/>
-					<p className="font-[Pacifico] text-4xl">InstaPet</p>
+					<p className="font-secondary text-4xl">InstaPet</p>
 				</div>
 			</a>
 			{/* Hero copy */}
 			<div className="mt-6">
-				<h1 className="text-lg font-bold text-shadow-lg">
+				<h1 className="font-luckiest-guy text-xl text-shadow-sm">
 					We've got the best pets!
 				</h1>
 				<p className="text-slate-600 text-shadow-lg">
