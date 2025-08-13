@@ -1,11 +1,16 @@
-import {useState} from "react";
-import viteLogo from "/vite.svg";
+import PageWrapper from "./components/PageWrapper";
+import Container from "./components/Container";
+import Header from "./components/Header";
 import "./App.css";
 
 function App() {
-	const [count, setCount] = useState(0);
-
-	return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+	return (
+		<PageWrapper>
+			<Container>
+				<Header />
+			</Container>
+		</PageWrapper>
+	);
 }
 
 export default App;
