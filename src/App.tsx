@@ -5,27 +5,10 @@ import "./App.css";
 import {ListPets} from "./components/ListPets";
 import {useState} from "react";
 import type {Pets} from "./types";
-
-const initialPets: Pets[] = [
-	{
-		id: 1,
-		name: "Buddy",
-		trait: "Playful",
-		imageUrl: "/src/assets/header-logo.jpg",
-		likedBy: [],
-	},
-	{
-		id: 2,
-		name: "Mittens",
-		trait: "Curious",
-		imageUrl: "/src/assets/header-logo.jpg",
-		likedBy: [],
-	},
-	// Add more pets as needed
-];
+import {petsList} from "./data/pets";
 
 function App() {
-	const [pets] = useState<Pets[]>(initialPets);
+	const [pets] = useState<Pets[]>(petsList);
 	const [liked, setLiked] = useState<Pets["id"][]>([]);
 	const [searchQuery, setSearchQuery] = useState("");
 
