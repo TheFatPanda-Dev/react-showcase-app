@@ -10,6 +10,7 @@ import {petsList} from "./data/pets";
 function App() {
 	const [pets] = useState<Pets[]>(petsList);
 	const [liked, setLiked] = useState<Pets["id"][]>([]);
+	//TODO: Implement search functionality
 	const [searchQuery, setSearchQuery] = useState("");
 
 	return (

@@ -24,6 +24,7 @@ export function PetCard({pets, liked, setLiked}: PetsCardProps) {
 					<span className="text-slate-300">·</span>
 					<p className="text-slate-500">{pets.trait}</p>
 				</div>
+                //TODO: Implement like functionality
 				{/* <LikeToggle puppy={puppy} /> */}
 			</div>
 		</li>
