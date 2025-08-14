@@ -2,17 +2,14 @@ import {PetCard} from "./PetCard";
 import {Dispatch, SetStateAction} from "react";
 import {Pets} from "../types";
 
-export function ListPets({
-	searchQuery,
-	pets,
-	liked,
-	setLiked,
-}: {
+type ListPetsProps = {
 	searchQuery: string;
 	pets: Pets[];
 	liked: Pets["id"][];
 	setLiked: Dispatch<SetStateAction<Pets["id"][]>>;
-}) {
+};
+
+export function ListPets({searchQuery, pets, liked, setLiked}: ListPetsProps) {
 	return (
 		<ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			{pets
