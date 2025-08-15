@@ -25,7 +25,8 @@ export function LikedToggleButton({
 			? pet.likedBy.filter((id) => id !== USER_ID)
 			: [...pet.likedBy, USER_ID];
 		// Compute new likes count
-		const currentLikes = typeof pet.likes === "number" ? pet.likes : pet.likedBy.length;
+		const currentLikes =
+			typeof pet.likes === "number" ? pet.likes : pet.likedBy.length;
 		const newLikes = isLiked ? Math.max(0, currentLikes - 1) : currentLikes + 1;
 		// Optimistically update UI
 		setLiked((prevLiked) => {
@@ -43,7 +44,7 @@ export function LikedToggleButton({
 				},
 				body: JSON.stringify({
 					likedBy: newLikedBy,
-					likes: newLikes
+					likes: newLikes,
 				}),
 			});
 			// Always refresh pets after like/dislike

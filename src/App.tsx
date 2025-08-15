@@ -10,7 +10,6 @@ function App() {
 	const [pets, setPets] = useState<Pets[]>([]);
 	const [liked, setLiked] = useState<Pets["id"][]>([]);
 	//TODO: Implement search functionality
-	const [searchQuery, setSearchQuery] = useState("");
 
 	const fetchPets = () => {
 		fetch("http://localhost:5555/pets")
@@ -22,19 +21,17 @@ function App() {
 		fetchPets();
 	}, []);
 
-
 	return (
 		<PageWrapper>
 			<Container>
 				<Header />
-				{/* Optionally add a search input here to update searchQuery */}
 				<ListPets
 					pets={pets}
 					liked={liked}
 					setLiked={setLiked}
 					refreshPets={fetchPets}
-					searchQuery={searchQuery}
 				/>
+				/* Optionally add a upload form here */
 			</Container>
 		</PageWrapper>
 	);
