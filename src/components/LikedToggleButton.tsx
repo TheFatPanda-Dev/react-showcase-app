@@ -6,27 +6,61 @@ export function LikedToggleButton({
 	pet,
 	liked,
 	setLiked,
+	refreshPets,
 }: {
 	pet: Pets;
 	liked: Pets["id"][];
 	setLiked: Dispatch<SetStateAction<Pets["id"][]>>;
+	refreshPets: () => void;
 }) {
+	// Removed duplicate destructuring of pet, liked, and setLiked
 	const [pending, setPending] = useState(false);
 
-	const handleToggle = () => {
+	const USER_ID = 1; // Placeholder user ID
+	const handleToggle = async () => {
 		setPending(true);
+		const isLiked = pet.likedBy.includes(USER_ID);
+		// Compute new likedBy array
+		const newLikedBy = isLiked
+			? pet.likedBy.filter((id) => id !== USER_ID)
+			: [...pet.likedBy, USER_ID];
+		// Compute new likes count
+		const currentLikes = typeof pet.likes === "number" ? pet.likes : pet.likedBy.length;
+		const newLikes = isLiked ? Math.max(0, currentLikes - 1) : currentLikes + 1;
+		// Optimistically update UI
 		setLiked((prevLiked) => {
-			if (prevLiked.includes(pet.id)) {
+			if (isLiked) {
 				return prevLiked.filter((id) => id !== pet.id);
 			} else {
 				return [...prevLiked, pet.id];
 			}
 		});
-		setTimeout(() => setPending(false), 300); // fake async
+		try {
+			await fetch(`http://localhost:5555/pets/${pet.id}`, {
+				method: "PATCH",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					likedBy: newLikedBy,
+					likes: newLikes
+				}),
+			});
+			// Always refresh pets after like/dislike
+			refreshPets();
+		} catch (error) {
+			console.error("Failed to update like status:", error);
+			refreshPets();
+		}
+		setPending(false);
 	};
 
 	return (
-		<button className="group" onClick={handleToggle} disabled={pending}>
+		<button
+			className="group flex items-center gap-2"
+			onClick={handleToggle}
+			disabled={pending}
+		>
 			{pending ? (
 				<LoaderCircle className="animate-spin stroke-slate-300" />
 			) : (
@@ -38,6 +72,13 @@ export function LikedToggleButton({
 					}
 				/>
 			)}
+			{/* Likes count and label */}
+			<span className="pet-likes">
+				{typeof pet.likes === "number" ? pet.likes : pet.likedBy.length}{" "}
+				{(typeof pet.likes === "number" ? pet.likes : pet.likedBy.length) === 1
+					? "like"
+					: "likes"}
+			</span>
 		</button>
 	);
 }

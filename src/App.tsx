@@ -3,15 +3,25 @@ import Container from "./components/Container";
 import Header from "./components/Header";
 import "./App.css";
 import {ListPets} from "./components/ListPets";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import type {Pets} from "./types";
-import {petsList} from "./data/pets";
 
 function App() {
-	const [pets] = useState<Pets[]>(petsList);
+	const [pets, setPets] = useState<Pets[]>([]);
 	const [liked, setLiked] = useState<Pets["id"][]>([]);
 	//TODO: Implement search functionality
 	const [searchQuery, setSearchQuery] = useState("");
+
+	const fetchPets = () => {
+		fetch("http://localhost:5555/pets")
+			.then((res) => res.json())
+			.then((data) => setPets(data));
+	};
+
+	useEffect(() => {
+		fetchPets();
+	}, []);
+
 
 	return (
 		<PageWrapper>
@@ -22,6 +32,7 @@ function App() {
 					pets={pets}
 					liked={liked}
 					setLiked={setLiked}
+					refreshPets={fetchPets}
 					searchQuery={searchQuery}
 				/>
 			</Container>

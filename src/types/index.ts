@@ -8,4 +8,5 @@ export type Pets = {
 	trait: string,
 	imageUrl: string,
 	likedBy: User["id"][],
+	likes: number,
 };

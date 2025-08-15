@@ -6,9 +6,10 @@ type PetsCardProps = {
 	pets: Pets;
 	liked: Pets["id"][];
 	setLiked: Dispatch<SetStateAction<Pets["id"][]>>;
+	refreshPets: () => void;
 };
 
-export function PetCard({pets, liked, setLiked}: PetsCardProps) {
+export function PetCard({pets, liked, setLiked, refreshPets}: PetsCardProps) {
 	return (
 		<li
 			key={pets.id}
@@ -25,11 +26,9 @@ export function PetCard({pets, liked, setLiked}: PetsCardProps) {
 					<span className="text-slate-300">·</span>
 					<p className="text-slate-500">{pets.trait}</p>
 				</div>
-                <LikedToggleButton
-					pet={pets}
-					liked={liked}
-					setLiked={setLiked}
-				/>
+				<div className="flex items-center gap-2">
+					<LikedToggleButton pet={pets} liked={liked} setLiked={setLiked} refreshPets={refreshPets} />
+				</div>
 			</div>
 		</li>
 	);
