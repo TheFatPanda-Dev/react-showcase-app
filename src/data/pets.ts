@@ -1,0 +1,88 @@
+import type {Pets} from "../types";
+
+export const petsList: Pets[] = [
+	{
+		id: 1,
+		name: "Babbles & Marley",
+		trait: "Mother of all pups",
+		imageUrl: "src/assets/pets-images/1.jpg",
+		likedBy: [],
+	},
+	{
+		id: 2,
+		name: "Stella",
+		trait: "Very good boi",
+		imageUrl: "src/assets/pets-images/2.jpg",
+		likedBy: [],
+	},
+	{
+		id: 3,
+		name: "Smoke",
+		trait: "Enjoys naps",
+		imageUrl: "src/assets/pets-images/3.jpg",
+		likedBy: [],
+	},
+	{
+		id: 4,
+		name: "Zippy",
+		trait: "Loves cheese",
+		imageUrl: "src/assets/pets-images/4.jpg",
+		likedBy: [],
+	},
+	{
+		id: 5,
+		name: "Russ",
+		trait: "Ready to save the world",
+		imageUrl: "src/assets/pets-images/5.jpg",
+		likedBy: [],
+	},
+	{
+		id: 6,
+		name: "Tank",
+		trait: "Ready for anything",
+		imageUrl: "src/assets/pets-images/6.jpg",
+		likedBy: [],
+	},
+	{
+		id: 7,
+		name: "Pooky",
+		trait: "Mother of all pups",
+		imageUrl: "src/assets/pets-images/7.jpg",
+		likedBy: [],
+	},
+	{
+		id: 8,
+		name: "Pongo",
+		trait: "Very good boi",
+		imageUrl: "src/assets/pets-images/8.jpg",
+		likedBy: [],
+	},
+	{
+		id: 9,
+		name: "Moose",
+		trait: "Enjoys naps",
+		imageUrl: "src/assets/pets-images/9.jpg",
+		likedBy: [],
+	},
+	{
+		id: 10,
+		name: "Digger",
+		trait: "Loves cheese",
+		imageUrl: "src/assets/pets-images/10.jpg",
+		likedBy: [],
+	},
+	{
+		id: 11,
+		name: "Brownie",
+		trait: "Ready to save the world",
+		imageUrl: "src/assets/pets-images/11.jpg",
+		likedBy: [],
+	},
+	{
+		id: 12,
+		name: "Maverick",
+		trait: "Ready for anything",
+		imageUrl: "src/assets/pets-images/12.jpg",
+		likedBy: [],
+	},
+];
