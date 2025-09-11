@@ -5,24 +5,30 @@
       "name": "Babbles & Marley",
       "trait": "Mother of all pups",
       "imageUrl": "src/assets/pets-images/1.jpg",
-      "likedBy": [],
-      "likes": 0
+      "likedBy": [
+        1
+      ],
+      "likes": 1
     },
     {
       "id": "2",
       "name": "Stella",
       "trait": "Very good boi",
       "imageUrl": "src/assets/pets-images/2.jpg",
-      "likedBy": [],
-      "likes": 0
+      "likedBy": [
+        1
+      ],
+      "likes": 1
     },
     {
       "id": "3",
       "name": "Smoke",
       "trait": "Enjoys naps",
       "imageUrl": "src/assets/pets-images/3.jpg",
-      "likedBy": [],
-      "likes": 0
+      "likedBy": [
+        1
+      ],
+      "likes": 1
     },
     {
       "id": "4",
@@ -37,16 +43,20 @@
       "name": "Russ",
       "trait": "Ready to save the world",
       "imageUrl": "src/assets/pets-images/5.jpg",
-      "likedBy": [],
-      "likes": 0
+      "likedBy": [
+        1
+      ],
+      "likes": 1
     },
     {
       "id": "6",
       "name": "Tank",
       "trait": "Ready for anything",
       "imageUrl": "src/assets/pets-images/6.jpg",
-      "likedBy": [],
-      "likes": 0
+      "likedBy": [
+        1
+      ],
+      "likes": 1
     },
     {
       "id": "7",
@@ -69,8 +79,10 @@
       "name": "Moose",
       "trait": "Enjoys naps",
       "imageUrl": "src/assets/pets-images/9.jpg",
-      "likedBy": [],
-      "likes": 0
+      "likedBy": [
+        1
+      ],
+      "likes": 1
     },
     {
       "id": "10",
